@@ -1,16 +1,15 @@
-package main
+package AdvOfCode
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"strconv"
 	"unicode"
 )
 
-func main() {
-	file, err := os.Open("input.txt")
+func Solve() int {
+	file, err := os.Open("Day1/input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,11 +32,10 @@ func main() {
 		sum += tmp
 	}
 
-	fmt.Println(sum)
-
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
+	return sum
 }
 
 func getFirstLastDigits(input string) (int, error) {
