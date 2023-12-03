@@ -43,7 +43,7 @@ func getFirstLastNumbers(input string) (int, error) {
 	var firstNum rune
 	var lastNum rune
 	indexes, digits, success := findFirstLastDigits(input)
-	firstWord, lastWord := getFirstLastWordIndexes(input)
+	firstWord, lastWord := getFirstLastWordIndexesAndValues(input)
 	if success {
 		firstNum = digits[0]
 		lastNum = digits[1]
@@ -62,7 +62,7 @@ func getFirstLastNumbers(input string) (int, error) {
 	return strconv.Atoi(string([]rune{firstNum, lastNum}))
 }
 
-func getFirstLastWordIndexes(input string) ([]int, []int) {
+func getFirstLastWordIndexesAndValues(input string) ([]int, []int) {
 	left, right := []int{len(input), -1}, []int{-1, -1}
 	numbers := []string{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
 	for i, number := range numbers {
@@ -77,6 +77,7 @@ func getFirstLastWordIndexes(input string) ([]int, []int) {
 	}
 	for i, number := range numbers {
 		tmp, err := IndexOfLastSubstring(input, number)
+
 		if err != nil {
 			continue
 		}
