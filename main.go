@@ -5,6 +5,7 @@ import (
 	Day1_2 "AdvOfCode/Day1_2"
 	Day2 "AdvOfCode/Day2"
 	Day2_2 "AdvOfCode/Day2_2"
+	Day3 "AdvOfCode/Day3"
 	"fmt"
 )
 
@@ -13,4 +14,5 @@ func main() {
 	fmt.Println("Day one second puzzle answer: ", Day1_2.Solve())
 	fmt.Println("Day two puzzle answer: ", Day2.Solve())
 	fmt.Println("Day two second puzzle answer: ", Day2_2.Solve())
+	fmt.Println("Day three puzzle answer: ", Day3.Solve())
 }
